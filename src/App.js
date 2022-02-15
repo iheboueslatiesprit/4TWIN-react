@@ -6,12 +6,12 @@ import axios from "axios";
 import ps from "./products.json";
 import { useState, useEffect } from "react";
 
-function App() {
+function App(props) {
 
-  const [data, setData] = useState([]);
+  const [ data , setData] = useState([]);
 
   const getData = () => {
-    fetch(ps, {
+    fetch( ps , {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -27,7 +27,7 @@ function App() {
       });
   };
 
-  useEffect(() => {
+  useEffect( () => {
     getData();
   }, []);
 
